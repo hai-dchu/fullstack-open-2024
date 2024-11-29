@@ -1,0 +1,21 @@
+@hostname = localhost
+@port = 3003
+@host = http://{{hostname}}:{{port}}
+
+GET {{host}}/api/blogs
+
+###
+POST {{host}}/api/users
+Content-Type: application/json
+
+{
+    "username": "root",
+    "name": "Superuser",
+    "password": "salainen"
+}
+
+###
+GET {{host}}/api/users
+
+###
+DELETE {{host}}/api/users/674a0016775efc5054f655dd
